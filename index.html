@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8880fa8513.js" crossorigin="anonymous"></script>
+    <title>Navbar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: "poppins",sans-serif;
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(99, 99, 245);
+            padding: 5px 10px;
+
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 18px;
+        }
+
+        li {
+            list-style: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .fa-xmark {
+            display: none;
+        }
+
+            .fa-bars{
+                display: none;
+            }
+        @media (max-width:600px) {
+            ul {
+                flex-direction: column;
+                height: 100vh;
+                background-color: black;
+                top: 0;
+                position: absolute;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 20px;
+                width: 300px;
+                right: -400px;
+                border-radius: 12px;
+                transition: right 0.3s ease-in;
+
+            }
+
+li{
+    color: rgba(121, 144, 235, 0.982);
+}
+            .fa-xmark {
+                display: flex;
+                align-self: flex-end;
+                font-size: 20px;
+            }
+            .fa-bars{
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <nav class="navbar">
+        <h1> Responsive Navbar</h1>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul>
+            <i class="fa-solid fa-xmark"></i>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Shop</li>
+        </ul>
+    </nav>
+
+
+    <script>
+        const cross = document.querySelector(".fa-xmark ")
+        const hamburger = document.querySelector(".fa-bars")
+const ul=document.querySelector("ul")
+
+hamburger.addEventListener("click",()=>{
+ul.style.right="0px"
+})
+
+cross.addEventListener("click",()=>{
+    ul.style.right="-400px"
+
+})
+
+    </script>
+</body>
+
+</html>
